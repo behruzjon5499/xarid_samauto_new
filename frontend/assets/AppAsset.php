@@ -12,22 +12,45 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '/dist/zoomslider.css',
-        '/css/samauto.css',
-        '/css/main.css',
-        'css/site.css',
-
+        '/css/bootstrap.min.css',
+        '/css/font-awesome.min.css',
+        '/css/animate.css',
+        '/css/owl.carousel.css',
+        '/css/slick.css',
+        '/css/off-canvas.css',
+        '/fonts/linea-fonts.css',
+        '/inc/custom-slider/css/nivo-slider.css',
+        '/inc/custom-slider/css/preview.css',
+        '/css/magnific-popup.css',
+        '/css/rsmenu-main.css',
+        '/css/rsmenu-transitions.css',
+        '/style.css',
+        '/css/responsive.css',
     ];
     public $js = [
-//        '/js/jquery-3.2.1.min.js',
-        '/js/modernizr-2.6.2.min.js',
-        '/js/OverlayScrollbars.js',
-        '/dist/jquery.zoomslider.min.js',
-        '/js/SamAuto.js',
-        '/js/main.js',
+        '/js/modernizr-2.8.3.min.js',
+        '/js/jquery.min.js',
+        '/js/bootstrap.min.js',
+        '/js/rsmenu-main.js',
+        '/js/jquery.nav.js',
+        '/js/owl.carousel.min.js',
+        '/js/slick.min.js',
+        '/js/isotope.pkgd.min.js',
+        '/js/imagesloaded.pkgd.min.js',
+        '/js/wow.min.js',
+        '/js/skill.bars.jquery.js',
+        '/js/jquery.counterup.min.js',
+        '/js/waypoints.min.js',
+        '/js/jquery.mb.YTPlayer.min.js',
+        '/js/jquery.magnific-popup.min.js',
+        '/inc/custom-slider/js/jquery.nivo.slider.js',
+        '/js/plugins.js',
+        '/js/contact.form.js',
+        '/js/main.js'
+
     ];
     public $depends = [
-//        'yii\web\YiiAsset',
-//        'yii\bootstrap\BootstrapAsset',
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }

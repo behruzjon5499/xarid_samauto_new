@@ -81,66 +81,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new ResetForm();
-        $user = User::find()->where(['id' => \Yii::$app->user->getId()])->one();
-        $model1 = new UpdateForm();
-        $count = Auctions::find()->where(['status' => 10])->count();
-        $counts = Auctions::find()->count();
-        $count_order = Orders::find()->where(['status' => 10])->count();
-        $counts_order = Orders::find()->count();
-
-        if ($model->load(Yii::$app->request->post()) && $model->reset()) {
-            $pw = $model->new_password;
-            $pwc = $model->new_password;
-            if ($pw == $pwc) {
-
-                $user = User::findIdentity(\Yii::$app->user->getId());
-                $user->setPassword($pw);
-                $user->generateAuthKey();
-                $user->password = $pw;
-                $user->generateEmailVerificationToken();
-                $user->save(false);
-                Yii::$app->session->setFlash('success', 'Thank you for reset password');
-                return $this->render('index', [
-                    'model' => $model,
-                    'model1' => $model1
-                ]);
-            } else {
-
-            }
-        } elseif ($model1->load(Yii::$app->request->post())) {
-//            VarDumper::dump($model1,12,true);
-//            die();
-            $user = User::findIdentity(\Yii::$app->user->getId());
-            $username = $model1->username;
-            $email = $model1->email;
-            $phone = $model1->phone;
-            $title_company = $model1->title_company;
-            $user->username = $username;
-            $user->email = $email;
-            $user->phone = $phone;
-            $user->title_company = $title_company;
-            $user->save(false);
-
-        } else {
-            return $this->render('index', [
-                'count_order' => $count_order,
-                'counts_order' => $counts_order,
-                'count' => $count,
-                'counts' => $counts,
-                'model' => $model,
-                'model1' => $model1
-            ]);
-        }
 
 
         return $this->render('index', [
-            'count_order' => $count_order,
-            'counts_order' => $counts_order,
-            'count' => $count,
-            'counts' => $counts,
-            'model' => $model,
-            'model1' => $model1
+
         ]);
 
     }

@@ -20,7 +20,7 @@ return [
             'db' => 'db', // DB connection component or its config
             'tableName' => '{{%queue}}', // Table name
             'channel' => 'default', // Queue channel key
-            'mutex' => \yii\mutex\MysqlMutex::class, // Mutex used to sync queries
+            'mutex' => \yii\mutex\PgsqlMutex::class, // Mutex used to sync queries
         ],
 
         'i18n' => [
